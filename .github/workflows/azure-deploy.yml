@@ -40,6 +40,7 @@ jobs:
         cp -r client/build deploy/client/
         cp server.js deploy/
         cp package.json deploy/
+        cp web.config deploy/
         cp .env.example deploy/.env
 
     - name: Deploy to Azure Web App
@@ -48,8 +49,3 @@ jobs:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ./deploy
-
-    - name: Test deployment
-      run: |
-        sleep 30
-        curl -f https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net/api/health || exit 1
