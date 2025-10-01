@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: localaifinance    # Set this to your Azure Web App name
-  NODE_VERSION: '18.x'
+  AZURE_WEBAPP_NAME: localaifinance-e8h8afgyd0b8gtd2    # Set this to your Azure Web App name
+  NODE_VERSION: '20.x'
 
 jobs:
   build-and-deploy:
